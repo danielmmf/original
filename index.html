@@ -633,6 +633,9 @@
                 </div>
               </div>
             </article>-->
+            <div class="alert alert-success">
+              <strong>Dica:</strong> O banco original também oferece plano odontológico
+            </div>
             <!-- Blurb minimal-->
             <article class="blurb blurb-minimal">
               <div class="unit flex-row unit-spacing-md">
@@ -693,6 +696,11 @@
         </div>
       </div>
     </section>
+    <--!Alert loucão-->
+    <div class="alert alert-success">
+      <strong>Dica:</strong> O banco original também oferece plano odontológico! clique para saber mais
+    </div>
+
     <section class="section-xl bg-default text-center" id="section-see-features">
       <div class="container">
         <div class="row justify-content-lg-center">
@@ -1343,36 +1351,31 @@
       var ctx = canvas.getContext("2d");
 
 
-       var options = {
-        scales: {
-            yAxes: [{
-                stacked: true
-            }]
-        }
-    }
-
-
-     var data= [{
-        x: 10,
-        y: 20
-    }, {
-        x: 15,
-        y: 10
-    }, {
-        x: 35,
-        y: 10
-    }, {
-        x: 15,
-        y: 20
-    }, {
-        x: 25,
-        y: 10
-    }]
+      
 
     var myLineChart = new Chart(ctx, {
       type: 'line',
-      data: data,
-      options: options
+      data: {
+        labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+        datasets: [ { 
+            data: [168,170,178,190,203,276,408,547,675,734],
+            label: "Projeção",
+            borderColor: "#3cba9f",
+            fill: false
+          }, { 
+            data: [16,130,200,120,70],
+            label: "Real",
+            borderColor: "#c45850",
+            fill: false
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Projeção x Real'
+        }
+      }
     });
   </script>
 
