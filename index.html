@@ -331,37 +331,8 @@
           </div>
         </div>
         <div class="row row-50">
-          <div class="col-md-6 col-lg-4">
-            <!-- Blurb circle-->
-            <!--DANIEL: COLOCAR UM GRÁFICO DE PIZZA BONITO, RESSALTO O BONITO-->
-            <article class="blurb blurb-circle blurb-circle_centered">
-              <div class="blurb-circle__icon">
-                <span class="icon linear-icon-feather"></span>
-              </div>
-              <p class="blurb__title">Clean and Crispy Design</p>
-              <p>Monstroid² is crafted by top industry leaders with love, care and customer needs in mind. </p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <!-- Blurb circle-->
-            <article class="blurb blurb-circle blurb-circle_centered">
-              <div class="blurb-circle__icon">
-                <span class="icon linear-icon-menu3"></span>
-              </div>
-              <p class="blurb__title">Novi Builder</p>
-              <p>Use our Novi Builder to customize and update your website within seconds.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <!-- Blurb circle-->
-            <article class="blurb blurb-circle blurb-circle_centered">
-              <div class="blurb-circle__icon">
-                <span class="icon linear-icon-bag2"></span>
-              </div>
-              <p class="blurb__title">Advanced UI Toolkit</p>
-              <p>Monstroid² comes with a powerful and flexible extended toolkit in addition to basic Bootstrap.</p>
-            </article>
-          </div>
+       
+          <canvas id="doughnut-chart" width="800" height="450"></canvas>
         </div>
       </div>
     </section>
@@ -997,6 +968,28 @@
         }
       }
     });
+
+
+
+    new Chart(document.getElementById("doughnut-chart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
   </script>
 
 </html>
